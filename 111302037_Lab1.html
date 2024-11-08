@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form Table</title>
+    <style>
+        /* Basic body styling */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+
+        /* Container styling */
+        .form-container {
+            width: 70%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: left;
+            vertical-align: top;
+            border-radius: 5px;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+            font-size: 18px;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        .photo-cell img {
+            border-radius: 8px;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Label and input styling */
+        input[type="text"], input[type="email"], select, textarea, input[type="date"] {
+            width: 95%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 4px;
+        }
+
+        /* Button styling */
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button[type="submit"] {
+            background-color: #28a745;
+        }
+
+        button[type="reset"] {
+            background-color: #dc3545;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2 style="text-align: center; color: #333;">About 111302037</h2>
+
+    <form>
+        <table>
+            <!-- First Row: Table Caption -->
+            <tr>
+                <th colspan="3">Personal Information</th>
+            </tr>
+
+            <!-- Second Row: Image and Form Fields -->
+            <tr>
+                <!-- Column 1: Image and caption spanning three rows -->
+                <td rowspan="3" class="photo-cell">
+                    <img src="hachi.jpeg" alt="personal photo">
+                    <p style="text-align: center; font-style: italic; color: #555;">Personal Photo</p>
+                </td>
+
+                <!-- Column 2, Row 1: Name and Gender -->
+                <td>Name: <input type="text" name="name"></td>
+                <td>
+                    Gender: 
+                    <input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female"> Female
+                    <input type="radio" name="gender" value="other"> Other
+                </td>
+            </tr>
+
+            <!-- Row 2: County Dropdown and Birthday -->
+            <tr>
+                <td>
+                    County:
+                    <select name="county">
+                        <option value="taipei">Taipei</option>
+                        <option value="tainan">Tainan</option>
+                        <option value="taichung">Taichung</option>
+                        <option value="taoyuan">Taoyuan</option>
+                    </select>
+                </td>
+                <td>
+                    Birthday: <input type="date" name="birthday">
+                </td>
+            </tr>
+
+            <!-- Row 3: Email -->
+            <tr>
+                <td>
+                    E-mail: <input type="email" name="email">
+                </td>
+                <td></td>
+            </tr>
+        </table>
+
+        <br>
+
+        <!-- Second Table: Hobbies and Skills -->
+        <table>
+            <tr>
+                <!-- Hobby Row -->
+                <td>Hobby</td>
+                <td>
+                    <input type="checkbox" name="hobby" value="swimming"> Swimming
+                    <input type="checkbox" name="hobby" value="volleyball"> Volleyball
+                    <input type="checkbox" name="hobby" value="movie"> Movie
+                    <input type="checkbox" name="hobby" value="game"> Game
+                    <input type="checkbox" name="hobby" value="sleep"> Sleep
+                </td>
+            </tr>
+
+            <!-- Skill Row -->
+            <tr>
+                <td>Skill</td>
+                <td>
+                    <input type="checkbox" name="skill" value="java"> Java
+                    <input type="checkbox" name="skill" value="html"> HTML
+                    <input type="checkbox" name="skill" value="python"> Python
+                    <input type="checkbox" name="skill" value="microsoft-office"> Microsoft Office
+                    <input type="checkbox" name="skill" value="premiere"> Premiere
+                </td>
+            </tr>
+
+            <!-- Say Something Row -->
+            <tr>
+                <td>Say something</td>
+                <td>
+                    <textarea name="say_something" placeholder="Say something here." rows="4" cols="50"></textarea>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Submit and Reset Buttons -->
+        <div class="buttons">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
